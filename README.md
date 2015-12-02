@@ -37,7 +37,7 @@ Placeholder selectors that contain common styles for structure and basic behavio
 #### `@extend %button-inline;`
 This draws a button that displays inline on the page.
 
-#### `@extend %button-block`
+#### `@extend %button-block;`
 This draws a button that expands the width of the containing element.
 
 ## Styles
@@ -45,6 +45,17 @@ Customizable presets that give your button a specific style-set.
 
 ### button-solid
 Paints your button as a solid object with colors, shadow and radius.
+
+##### Options
+
+* `$color-passive: #999` Background color by default
+* `$color-selected: #666` Backgound color on hover or focus
+* `$color-text: #fff` Color of the inner text by default
+* `$radius-size: 4px` Size of the border radius by default
+* `$shadow-passive: 0 0 0 rgba(50, 50, 50, .5)` Box shadow style by default
+* `$shadow-selected: 0 0 6px rgba(50, 50, 50, .5)` Box shadow style on hover and focus
+
+##### Example
 ```css
 /* navy background that shifts to blue on hover, in white text, rounded by 3px with a black box shadow that expands spread on hover  */
 @mixin button-solid navy, blue, #fff, 3px, 0 0 0 black, 0 0 5px black;
@@ -52,6 +63,18 @@ Paints your button as a solid object with colors, shadow and radius.
 
 ### button-hollow
 Paints your button as a outlined object with color, shadow and radius.
+
+##### Options
+
+* `$color-passive: #999` Border and text color by default
+* `$color-selected: #666` Border and text color on hover or focus
+* `$color-background: transparent` Optional background-color, made transparent by default
+* `$radius-size: 4px` Size of the border radius by default
+* `$border-width: 1px` Width of the border by default
+* `$shadow-passive: none` Box shadow style by default
+* `$shadow-selected: none` Box shadow style on hover and focus
+
+##### Example
 ```css
 /* navy text and border that shifts to blue on hover, with a transparent background, rounded by 3px and no shadow */
 @mixin button-hollow navy, blue, transparent, 3px, 1px, none, none;
