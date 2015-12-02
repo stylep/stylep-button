@@ -1,0 +1,18 @@
+/* @import stylep-button; */
+@import '../index.css';
+
+.button--inline {
+  @extend %button-inline;
+}
+
+.button--block {
+  @extend %button-block;
+}
+
+.button--solid {
+  @mixin button-solid;
+}
+
+.button--hollow {
+  @mixin button-hollow;
+}

@@ -1,0 +1,52 @@
+/* @import stylep-button; */
+.button--inline, .button--block {
+  appearance: none;
+  border-width: 0;
+  cursor: pointer;
+  display: inline-block;
+  padding: 13px 24px;
+  position: relative;
+  line-height: 1;
+  margin: 0 3% 3% 0;
+  min-width: 44px;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+}
+
+.button--block {
+  display: block;
+  width: 100%;
+}
+
+.button--solid {
+  background-color: #999;
+  border-radius: 4px;
+  box-shadow: 0 0 0 rgba(50, 50, 50, .5);
+  color: #fff;
+  @mixin-content;
+}
+
+.button--solid:hover, .button--solid:focus {
+  background-color: #666;
+  box-shadow: 0 0 6px rgba(50, 50, 50, .5);
+}
+
+.button--hollow {
+  background-color: transparent;
+  border-color: #999;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: none;
+  color: #999;
+  @mixin-content;
+}
+
+.button--hollow:hover, .button--hollow:focus {
+  border-color: #666;
+  box-shadow: none;
+  color: #666;
+}
