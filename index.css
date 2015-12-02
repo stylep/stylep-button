@@ -1,0 +1,48 @@
+/* stylep-button */
+
+%button-pattern {
+  appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 2.25% 4%;
+  position: relative;
+  line-height: 1;
+  margin: 0 3% 3% 0;
+  min-width: 8%;
+  text-align: center;
+  user-select: none;
+  vertical-align: middle;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+%button-wide-pattern {
+  display: block;
+  width: 100%;
+}
+
+@define-mixin button-style
+  $bg: var(--button-background), 
+  $bg-hover: var(--button-background-hover), 
+  $font-size: var(--button-font-size),
+  $shadow: rgba(0, 0, 0, .5) {
+
+  background-color: $bg;
+  box-shadow: 0 0 0 var(--shadow);
+  color: #fff;
+  font-size: $font-size;
+
+  &:hover,
+  &:focus {
+    background-color: $bg-hover;
+    box-shadow: 0 0 6px var(--shadow);
+    text-decoration: none;
+  }
+
+  i {
+    color: contrast($bg);
+  }
+}
+
