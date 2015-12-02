@@ -1,6 +1,6 @@
-/* stylep-button */
+@charset "UTF-8";
 
-%button-pattern {
+%button-inline {
   appearance: none;
   border-width: 0;
   cursor: pointer;
@@ -9,7 +9,7 @@
   position: relative;
   line-height: 1;
   margin: 0 3% 3% 0;
-  min-width: 8%;
+  min-width: 44px;
   outline: 0;
   text-align: center;
   text-decoration: none;
@@ -17,18 +17,21 @@
   vertical-align: middle;
 }
 
-%button-wide-pattern {
+%button-block {
+  @extend %button-inline;
   display: block;
   width: 100%;
 }
 
-@define-mixin button-color
+@define-mixin button-solid
   $color-passive: #999, 
   $color-selected: #666, 
   $color-text: #fff,
-  $color-shadow: rgba(0, 0, 0, .5) {
+  $color-shadow: rgba(50, 50, 50, .5),
+  $radius-size: 4px {
 
   background-color: $color-passive;
+  border-radius: $radius-size;
   box-shadow: 0 0 0 $color-shadow;
   color: $color-text;
 
@@ -36,6 +39,28 @@
   &:focus {
     background-color: $color-selected;
     box-shadow: 0 0 6px $color-shadow;
+  }
+}
+
+@define-mixin button-hollow
+  $color-passive: #999, 
+  $color-selected: #666, 
+  $color-shadow: rgba(50, 50, 50, .5),
+  $radius-size: 4px,
+  $border-width: 1px {
+
+  border-color: $color-passive;
+  border-radius: $radius-size;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 0 0 $color-shadow;
+  color: $color-passive;
+
+  &:hover,
+  &:focus {
+    border-color: $color-selected;
+    box-shadow: 0 0 6px $color-shadow;
+    color: $color-selected;
   }
 }
 
