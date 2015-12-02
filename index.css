@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 %button-inline {
   appearance: none;
   border-width: 0;
@@ -35,6 +33,7 @@
   border-radius: $radius-size;
   box-shadow: $shadow-passive;
   color: $color-text;
+  @mixin-content;
 
   &:hover,
   &:focus {
@@ -59,12 +58,12 @@
   border-width: 1px;
   box-shadow: $shadow-passive;
   color: $color-passive;
+  @mixin-content;
 
   &:hover,
   &:focus {
     border-color: $color-selected;
     box-shadow: $shadow-selected;
-  }
     color: $color-selected;
   }
 }
