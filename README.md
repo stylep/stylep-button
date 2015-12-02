@@ -22,7 +22,7 @@ bower install stylep-button
   @extend %button-inline;
 
   /* Customize your button */
-  @mixin button-solid navy, blue, #fff, 0 1px 1px #000;
+  @mixin button-solid navy, blue;
 
   /* or roll your own */
   background-color: blue;
