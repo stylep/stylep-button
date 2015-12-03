@@ -1,6 +1,6 @@
 # stylep-button
 
-<img src=”giticon.png” title=”stylep-button” align=”right” height=”95”>
+<img src=giticon.png title=stylep-button align=right height=95>
 
 A simple button style pattern for your next project.
 
