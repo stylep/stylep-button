@@ -1,19 +1,24 @@
 /* @import stylep-button; */
 .button--inline, .button--block {
   appearance: none;
+  background-color: initial;
   border-width: 0;
   cursor: pointer;
   display: inline-block;
-  padding: 13px 24px;
+  padding: 13px 18px;
   position: relative;
   line-height: 1;
   margin: 0 3% 3% 0;
+  max-width: 100%;
   min-width: 44px;
   outline: 0;
+  overflow: hidden;
   text-align: center;
   text-decoration: none;
+  text-overflow: ellipsis;
   user-select: none;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .button--block {
