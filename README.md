@@ -6,11 +6,7 @@ A simple button style pattern for your next project.
 
 ## Install
 ``` shell
-# NPM
 npm i --save-dev stylep-button
-
-# Bower
-bower install stylep-button
 ```
 
 ## Usage
