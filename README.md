@@ -69,12 +69,11 @@ Paints your button as a outlined object with color, shadow and radius.
 * `$color-background: transparent` Optional background-color, made transparent by default
 * `$radius-size: 4px` Size of the border radius by default
 * `$border-width: 1px` Width of the border by default
-* `$shadow-passive: none` Box shadow style by default
-* `$shadow-selected: none` Box shadow style on hover and focus
+* `$shadow: none` Box shadow style on hover and focus
 
 ##### Example
 ```css
 /* navy text and border that shifts to blue on hover, with a transparent background, rounded by 3px and no shadow */
-@mixin button-hollow navy, blue, transparent, 3px, 1px, none, none;
+@mixin button-hollow navy, blue, transparent, 3px, 1px, none;
 ```
 
