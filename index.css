@@ -26,7 +26,7 @@
 
 @define-mixin button-solid
   $color-passive: #999, 
-  $color-selected: #666, 
+  $color-hover: #666, 
   $color-text: #fff,
   $radius-size: 4px,
   $shadow: 0 0 6px rgba(50, 50, 50, .5) {
@@ -54,12 +54,12 @@
   &:hover::after { opacity: 1; }
 
   &:hover,
-  &:focus { background-color: $color-selected; }
+  &:focus { background-color: $color-hover; }
 }
 
 @define-mixin button-hollow
   $color-passive: #999, 
-  $color-selected: #666, 
+  $color-hover: #666, 
   $color-background: transparent,
   $radius-size: 4px,
   $border-width: 1px,
@@ -76,8 +76,8 @@
 
   &:hover,
   &:focus {
-    border-color: $color-selected;
-    color: $color-selected;
+    border-color: $color-hover;
+    color: $color-hover;
   }
 
   &::after {
@@ -97,8 +97,8 @@
 
   &:hover,
   &:focus { 
-    border-color: $color-selected; 
-    color: $color-selected;
+    border-color: $color-hover; 
+    color: $color-hover;
   }
 }
 
