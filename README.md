@@ -51,13 +51,12 @@ Paints your button as a solid object with colors, shadow and radius.
 * `$color-selected: #666` Backgound color on hover or focus
 * `$color-text: #fff` Color of the inner text by default
 * `$radius-size: 4px` Size of the border radius by default
-* `$shadow-passive: 0 0 0 rgba(50, 50, 50, .5)` Box shadow style by default
-* `$shadow-selected: 0 0 6px rgba(50, 50, 50, .5)` Box shadow style on hover and focus
+* `$shadow: 0 0 6px rgba(50, 50, 50, .5)` Box shadow style on hover and focus
 
 ##### Example
 ```css
 /* navy background that shifts to blue on hover, in white text, rounded by 3px with a black box shadow that expands spread on hover  */
-@mixin button-solid navy, blue, #fff, 3px, 0 0 0 black, 0 0 5px black;
+@mixin button-solid navy, blue, #fff, 3px, 0 0 5px black;
 ```
 
 ### button-hollow
