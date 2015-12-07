@@ -26,49 +26,52 @@
 
 /* Grouping */
 
-.button-group {
+.button-group--inline, .button-group--block {
   box-sizing: border-box;
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
-
 }
 
-.button-group button {
+.button-group--inline button, .button-group--block button {
   margin-right: 1px;
+}
+
+.button-group--inline button:first-child, .button-group--block button:first-child {
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.button-group--inline button:not(:first-child):not(:last-child), .button-group--block button:not(:first-child):not(:last-child) {
+  border-radius: 0 !important;
+}
+
+.button-group--inline button:last-child, .button-group--block button:last-child {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+.button-group--block button {
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;
 }
 
-.button-group button:first-child {
-  border-bottom-right-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-}
-
-.button-group button:not(:first-child):not(:last-child) {
-  border-radius: 0 !important;
-}
-
-.button-group button:last-child {
-  border-bottom-left-radius: 0 !important;
-  border-top-left-radius: 0 !important;
-}
-
 .button--solid {
-  background-color: #999;
+  background-color: #444;
   border-radius: 4px;
   color: #fff;
   position: relative;
   transition: background-color .3s ease-in-out;
-  @mixin-content;
 }
+
+/* @mixin-content;*/
 
 .button--solid::after {
   border-radius: 4px;
-  bottom: 0;
   box-shadow: 0 0 6px rgba(50, 50, 50, .5);
+  bottom: 0;
   content: '';
   left: 0;
   opacity: 0;
@@ -83,22 +86,23 @@
 }
 
 .button--solid:hover, .button--solid:focus {
-  background-color: #666;
+  background-color: #555;
 }
 
 .button--hollow {
   background-color: transparent;
-  border-color: #999;
+  border-color: #444;
   border-radius: 4px;
   border-style: solid;
   border-width: 1px;
-  color: #999;
+  color: #444;
   transition: background .3s ease-in-out, color .3s ease-in-out;
-  @mixin-content;
 }
 
+/* @mixin-content;*/
+
 .button--hollow:hover, .button--hollow:focus {
-  background-color: #999;
+  background-color: #444;
   color: #fff;
 }
 
@@ -120,6 +124,7 @@
 }
 
 .button--hollow:hover, .button--hollow:focus {
-  background-color: #999;
+  background-color: #444;
   color: #fff;
 }
+

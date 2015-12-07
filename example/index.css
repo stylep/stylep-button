@@ -17,6 +17,11 @@
   @mixin button-hollow;
 }
 
-.button-group {
-  @extend %button-group;
+.button-group--inline {
+  @extend %button-group-inline;
 }
+
+.button-group--block {
+  @extend %button-group-block;
+}
+
