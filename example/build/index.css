@@ -24,6 +24,38 @@
   width: 100%;
 }
 
+/* Grouping */
+
+.button-group {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.button-group button {
+  margin-right: 1px;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.button-group button:first-child {
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.button-group button:not(:first-child):not(:last-child) {
+  border-radius: 0 !important;
+}
+
+.button-group button:last-child {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
 .button--solid {
   background-color: #999;
   border-radius: 4px;

@@ -16,3 +16,7 @@
 .button--hollow {
   @mixin button-hollow;
 }
+
+.button-group {
+  @extend %button-group;
+}
