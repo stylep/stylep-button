@@ -61,13 +61,13 @@
   border-style: solid;
   border-width: 1px;
   color: #999;
-  transition: border .3s ease-in-out, color .3s ease-in-out;
+  transition: background .3s ease-in-out, color .3s ease-in-out;
   @mixin-content;
 }
 
 .button--hollow:hover, .button--hollow:focus {
-  border-color: #666;
-  color: #666;
+  background-color: #999;
+  color: #fff;
 }
 
 .button--hollow::after {
@@ -88,6 +88,6 @@
 }
 
 .button--hollow:hover, .button--hollow:focus {
-  border-color: #666;
-  color: #666;
+  background-color: #999;
+  color: #fff;
 }
