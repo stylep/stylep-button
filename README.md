@@ -39,6 +39,15 @@ This draws a button that displays inline on the page.
 #### `@extend %button-block;`
 This draws a button that expands the width of the containing element.
 
+#### `@extend %button-group-inline;`
+This draws containing buttons inline on the page.
+
+#### `@extend %button-group-block;`
+This draws containing buttons expanded to the width of the containing element.
+
+#### `@extend %button-group-pill;`
+Combined with another group pattern, you can round off only the first and last button.
+
 ## Styles
 Customizable presets that give your button a specific style-set.
 
