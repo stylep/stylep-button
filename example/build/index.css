@@ -1,4 +1,6 @@
 /* @import stylep-button; */
+/* Button */
+
 .button--inline, .button--block {
   appearance: none;
   background-color: initial;
@@ -17,6 +19,7 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  z-index: 10;
 }
 
 .button--block {
@@ -24,7 +27,7 @@
   width: 100%;
 }
 
-/* Grouping */
+/* Button Group */
 
 .button-group--inline, .button-group--block {
   box-sizing: border-box;
@@ -32,24 +35,12 @@
   flex: 0 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-bottom: 3%;
 }
 
 .button-group--inline button, .button-group--block button {
   margin-right: 1px;
-}
-
-.button-group--inline button:first-child, .button-group--block button:first-child {
-  border-bottom-right-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-}
-
-.button-group--inline button:not(:first-child):not(:last-child), .button-group--block button:not(:first-child):not(:last-child) {
-  border-radius: 0 !important;
-}
-
-.button-group--inline button:last-child, .button-group--block button:last-child {
-  border-bottom-left-radius: 0 !important;
-  border-top-left-radius: 0 !important;
+  margin-bottom: 1px;
 }
 
 .button-group--block button {
@@ -57,6 +48,8 @@
   flex-grow: 1;
   max-width: 100%;
 }
+
+body { overflow-x: hidden; }
 
 .button--solid {
   background-color: #444;
@@ -66,7 +59,7 @@
   transition: background-color .3s ease-in-out;
 }
 
-/* @mixin-content;*/
+/* @mixin-content; */
 
 .button--solid::after {
   border-radius: 4px;
@@ -79,6 +72,7 @@
   right: 0;
   top: 0;
   transition: opacity .3s ease-in-out;
+  z-index: 5;
 }
 
 .button--solid:hover::after {
@@ -98,8 +92,6 @@
   color: #444;
   transition: background .3s ease-in-out, color .3s ease-in-out;
 }
-
-/* @mixin-content;*/
 
 .button--hollow:hover, .button--hollow:focus {
   background-color: #444;
@@ -128,3 +120,16 @@
   color: #fff;
 }
 
+.button-group--pill button:first-child {
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.button-group--pill button:not(:first-child):not(:last-child) {
+  border-radius: 0 !important;
+}
+
+.button-group--pill button:last-child {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}

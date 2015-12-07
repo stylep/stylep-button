@@ -1,6 +1,8 @@
 /* @import stylep-button; */
 @import '../index.css';
 
+body { overflow-x: hidden; }
+
 .button--inline {
   @extend %button-inline;
 }
@@ -25,3 +27,6 @@
   @extend %button-group-block;
 }
 
+.button-group--pill {
+  @mixin button-group-pill;
+}
