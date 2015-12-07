@@ -25,11 +25,11 @@
 }
 
 @define-mixin button-solid
-  $color-passive: #999, 
-  $color-hover: #666, 
-  $color-text: #fff,
-  $radius-size: 4px,
-  $shadow: 0 0 6px rgba(50, 50, 50, .5) {
+$color-passive: #999, 
+$color-hover: #666, 
+$color-text: #fff,
+$radius-size: 4px,
+$shadow: 0 0 6px rgba(50, 50, 50, .5) {
 
   background-color: $color-passive;
   border-radius: $radius-size;
@@ -58,12 +58,12 @@
 }
 
 @define-mixin button-hollow
-  $color-passive: #999, 
-  $color-hover: #fff, 
-  $color-background: transparent,
-  $radius-size: 4px,
-  $border-width: 1px,
-  $shadow: none {
+$color-passive: #999, 
+$color-hover: #fff, 
+$color-background: transparent,
+$radius-size: 4px,
+$border-width: 1px,
+$shadow: none {
 
   background-color: $color-background;
   border-color: $color-passive;
@@ -100,5 +100,37 @@
     background-color: $color-passive;
     color: $color-hover;
   }
+}
+
+/* Grouping */
+
+%button-group {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  button {
+    margin-right: 1px;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+
+    &:first-child {
+      border-bottom-right-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+    }
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0 !important;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 0 !important;
+      border-top-left-radius: 0 !important;
+    }
+  }
+
 }
 
