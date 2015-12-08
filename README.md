@@ -56,7 +56,7 @@ Paints your button as a solid object with colors, shadow and radius.
 
 ##### Options
 
-* `$color-passive: #444` Background color by default
+* `$color-passive: #333` Background color by default
 * `$color-hover: #555` Backgound color on hover or focus
 * `$color-text: #fff` Color of the inner text by default
 * `$radius-size: 4px` Size of the border radius by default
@@ -73,7 +73,7 @@ Paints your button as a outlined object with color, shadow and radius.
 
 ##### Options
 
-* `$color-passive: #444` Border and text color by default
+* `$color-passive: #555` Border and text color by default
 * `$color-hover: #fff` Border and text color on hover or focus
 * `$color-background: transparent` Optional background-color, made transparent by default
 * `$radius-size: 4px` Size of the border radius by default
