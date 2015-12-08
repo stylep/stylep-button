@@ -2,7 +2,9 @@
 /* Button */
 
 .button--inline, .button--block {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: initial;
   border-width: 0;
   cursor: pointer;
@@ -16,7 +18,10 @@
   outline: 0;
   text-align: center;
   text-decoration: none;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   vertical-align: middle;
   white-space: nowrap;
   z-index: 10;
@@ -31,10 +36,18 @@
 
 .button-group--inline, .button-group--block {
   box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex: 0 1 auto;
-  flex-direction: row;
-  flex-wrap: wrap;
+  -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   margin-bottom: 3%;
 }
 
@@ -44,7 +57,11 @@
 }
 
 .button-group--block button {
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
   flex-basis: 0;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
   flex-grow: 1;
   max-width: 100%;
 }
@@ -52,7 +69,7 @@
 body { overflow-x: hidden; }
 
 .button--solid {
-  background-color: #444;
+  background-color: #333;
   border-radius: 4px;
   color: #fff;
   position: relative;
@@ -63,7 +80,7 @@ body { overflow-x: hidden; }
 
 .button--solid::after {
   border-radius: 4px;
-  box-shadow: 0 0 6px rgba(50, 50, 50, .5);
+  box-shadow: none;
   bottom: 0;
   content: '';
   left: 0;
@@ -85,16 +102,16 @@ body { overflow-x: hidden; }
 
 .button--hollow {
   background-color: transparent;
-  border-color: #444;
+  border-color: #555;
   border-radius: 4px;
   border-style: solid;
   border-width: 1px;
-  color: #444;
+  color: #555;
   transition: background .3s ease-in-out, color .3s ease-in-out;
 }
 
 .button--hollow:hover, .button--hollow:focus {
-  background-color: #444;
+  background-color: #555;
   color: #fff;
 }
 
@@ -116,7 +133,7 @@ body { overflow-x: hidden; }
 }
 
 .button--hollow:hover, .button--hollow:focus {
-  background-color: #444;
+  background-color: #555;
   color: #fff;
 }
 

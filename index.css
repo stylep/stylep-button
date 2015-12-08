@@ -28,11 +28,11 @@
 }
 
 @define-mixin button-solid
-$color-passive: #444, 
+$color-passive: #333, 
 $color-hover: #555, 
 $color-text: #fff,
 $radius-size: 4px,
-$shadow: 0 0 6px rgba(50, 50, 50, .5) {
+$shadow: none {
 
   background-color: $color-passive;
   border-radius: $radius-size;
@@ -64,7 +64,7 @@ $shadow: 0 0 6px rgba(50, 50, 50, .5) {
 }
 
 @define-mixin button-hollow
-$color-passive: #444, 
+$color-passive: #555, 
 $color-hover: #fff, 
 $color-background: transparent,
 $radius-size: 4px,
