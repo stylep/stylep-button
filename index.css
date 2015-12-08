@@ -39,7 +39,7 @@ $shadow: none {
   color: $color-text;
   position: relative;
   transition: background-color .3s ease-in-out;
-  /* @mixin-content; */
+  @mixin-content;
 
   &::after {
     border-radius: $radius-size;
@@ -55,12 +55,16 @@ $shadow: none {
     z-index: 5;
   }
 
-  &:hover::after {
-    opacity: 1;
-  }
+  &:hover::after { opacity: 1; }
 
   &:hover,
   &:focus { background-color: $color-hover; }
+
+  &[disabled] {
+    opacity: .35;
+    pointer-events: none;
+  }
+
 }
 
 @define-mixin button-hollow
@@ -106,6 +110,34 @@ $shadow: none {
     background-color: $color-passive;
     color: $color-hover;
   }
+
+  &[disabled] {
+    opacity: .35;
+    pointer-events: none;
+  }
+}
+
+@define-mixin button-circle-solid
+$color-passive: #333, 
+$color-hover: #555, 
+$color-text: #fff,
+$shadow: none,
+$padding: 15px {
+  @mixin button-solid $color-passive, $color-hover, $color-text, 50%, $shadow {
+    padding: $padding;
+  }
+}
+
+@define-mixin button-circle-hollow
+$color-passive: #555, 
+$color-hover: #fff, 
+$color-background: transparent,
+$shadow: none,
+$border-width: 1px,
+$padding: 15px {
+  @mixin button-hollow $color-passive, $color-hover, $color-background, 50%, $border-width, $shadow {
+    padding: $padding;
+  }
 }
 
 /* Button Group */
@@ -118,7 +150,7 @@ $shadow: none {
   flex-wrap: wrap;
   margin-bottom: 3%;
 
-  button {
+  & button {
     margin-right: 1px;
     margin-bottom: 1px;
   }
