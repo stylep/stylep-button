@@ -19,6 +19,14 @@ body { overflow-x: hidden; }
   @mixin button-hollow;
 }
 
+.button-circle--solid {
+  @mixin button-circle-solid;
+}
+
+.button-circle--hollow {
+  @mixin button-circle-hollow;
+}
+
 .button-group--inline {
   @extend %button-group-inline;
 }
