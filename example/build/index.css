@@ -1,5 +1,12 @@
 /* @import stylep-button; */
-/* Button */
+/*---
+  # Button 
+
+  ```html_example
+  <button class="button--inline button--solid"></button>
+  ```
+ 
+ */
 
 .button--inline, .button--block {
   -webkit-appearance: none;
@@ -66,7 +73,17 @@
   max-width: 100%;
 }
 
-body { overflow-x: hidden; }
+body {
+  background-color: #E8EBEF;
+  font-family: 'Helvetica Neue';
+  overflow-x: hidden;
+}
+
+section {
+  background-color: #fff;
+  padding: 1em 1em .125em;
+  margin-bottom: 1em;
+}
 
 .button--solid {
   background-color: #333;

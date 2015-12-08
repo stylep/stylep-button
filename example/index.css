@@ -1,7 +1,17 @@
 /* @import stylep-button; */
 @import '../index.css';
 
-body { overflow-x: hidden; }
+body {
+  background-color: #E8EBEF;
+  font-family: 'Helvetica Neue';
+  overflow-x: hidden;
+}
+
+section {
+  background-color: #fff;
+  padding: 1em 1em .125em;
+  margin-bottom: 1em;
+}
 
 .button--inline {
   @extend %button-inline;
