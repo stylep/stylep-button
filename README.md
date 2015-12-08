@@ -86,3 +86,37 @@ Paints your button as a outlined object with color, shadow and radius.
 @mixin button-hollow navy, blue, transparent, 3px, 1px, none;
 ```
 
+### button-circle-solid
+Paints your button as a solid object with colors, shadow and rounded radius.
+
+##### Options
+
+* `$color-passive: #333` Background color by default
+* `$color-hover: #555` Backgound color on hover or focus
+* `$color-text: #fff` Color of the inner text by default
+* `$padding: 15px` Spacing inside the button
+* `$shadow: none` Box shadow style on hover and focus
+
+##### Example
+```css
+/* navy background that shifts to blue on hover, in white text, spaced out at 15px with a black box shadow that expands spread on hover  */
+@mixin button-solid navy, blue, #fff, 15px, 0 0 5px black;
+```
+
+### button-circle-hollow
+Paints your button as a outlined object with color, shadow and rounded radius.
+
+##### Options
+
+* `$color-passive: #555` Border and text color by default
+* `$color-hover: #fff` Border and text color on hover or focus
+* `$color-background: transparent` Optional background-color, made transparent by default
+* `$padding: 15px` Spacing inside the button
+* `$border-width: 1px` Width of the border by default
+* `$shadow: none` Box shadow style on hover and focus
+
+##### Example
+```css
+/* navy text and border that shifts to blue on hover, with a transparent background, with 3px space inside, 1px border size and no shadow */
+@mixin button-hollow navy, blue, transparent, 3px, 1px, none;
+```
