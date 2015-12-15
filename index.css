@@ -81,7 +81,7 @@ $shadow: none {
   border-style: solid;
   border-width: 1px;
   color: $color-passive;
-  transition: background .3s ease-in-out, color .3s ease-in-out;
+  transition: background .4s ease-in-out, color .3s ease-in-out;
   @mixin-content;
 
   &:hover,
