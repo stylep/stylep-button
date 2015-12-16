@@ -84,12 +84,6 @@ $shadow: none {
   transition: background .4s ease-in-out, color .3s ease-in-out;
   @mixin-content;
 
-  &:hover,
-  &:focus {
-    background-color: $color-passive;
-    color: $color-hover;
-  }
-
   &::after {
     border-radius: $radius-size;
     bottom: 0;
