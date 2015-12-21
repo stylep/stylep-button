@@ -5,8 +5,10 @@
 A simple button style pattern for your next project.
 
 ## Install
+You can install using the spm command or install using npm and the project name.
+
 ``` shell
-npm i --save-dev stylep-button
+spm install button
 ```
 
 ## Usage
