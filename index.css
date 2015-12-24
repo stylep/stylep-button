@@ -37,7 +37,6 @@ $shadow: none {
   background-color: $color-passive;
   border-radius: $radius-size;
   color: $color-text;
-  position: relative;
   transition: background-color .3s ease-in-out;
   @mixin-content;
 
