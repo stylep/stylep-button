@@ -23,102 +23,130 @@ spm install button
   @extend %button-inline;
 
   /* Customize your button */
-  @mixin button-solid navy, blue;
-
-  /* or roll your own */
-  background-color: blue;
-  box-shadow: 0 1px 1px #000;
-  color: #fff;
+  @extend %button-solid;
+  --button-color: green;
+  --button-text-color: white;
 }
 ```
 
 ## Patterns
 Placeholder selectors that contain common styles for structure and basic behavior of your buttons.
 
-#### `@extend %button-inline;`
+#### `%button-inline`
 This draws a button that displays inline on the page.
 
-#### `@extend %button-block;`
+##### Variables
+
+```css
+--button-cursor: pointer;
+--button-display: inline-block;
+--button-line-height: 1;
+--button-margin: 0 2% 2% 0;
+--button-max-width: 100%;
+--button-min-width: 44px;
+--button-outline: 0;
+--button-padding: 13px 18px;
+--button-position: relative;
+--button-text-align: center;
+--button-text-decoration: none;
+--button-user-select: none;
+--button-vertical-align: middle;
+--button-white-space: nowrap;
+--button-z-index: 11;
+```
+
+#### `%button-block`
 This draws a button that expands the width of the containing element.
 
-#### `@extend %button-group-inline;`
+##### Variables
+
+```css
+--button-cursor: pointer;
+--button-display: block;
+--button-line-height: 1;
+--button-margin: 0 2% 2% 0;
+--button-max-width: 100%;
+--button-min-width: 44px;
+--button-outline: 0;
+--button-padding: 13px 18px;
+--button-position: relative;
+--button-text-align: center;
+--button-text-decoration: none;
+--button-user-select: none;
+--button-vertical-align: middle;
+--button-white-space: nowrap;
+--button-z-index: 11;
+--button-width: 100%;
+```
+
+#### `%button-group-inline`
 This draws containing buttons inline on the page.
 
-#### `@extend %button-group-block;`
+#### `%button-group-block`
 This draws containing buttons expanded to the width of the containing element.
 
-#### `@extend %button-group-pill;`
+#### `%button-group-pill`
 Combined with another group pattern, you can round off only the first and last button.
 
 ## Styles
 Customizable presets that give your button a specific style-set.
 
-### button-solid
-Paints your button as a solid object with colors, shadow and radius.
+#### `%button-solid`
+Paints your button as a solid object with colors and radius. For added performance the hover state uses the `::after` pseudo-class to render a shadow with only an `opacity` transition.
 
-##### Options
+##### Variables
 
-* `$color-passive: #333` Background color by default
-* `$color-hover: #555` Backgound color on hover or focus
-* `$color-text: #fff` Color of the inner text by default
-* `$radius-size: 4px` Size of the border radius by default
-* `$shadow: 0 0 6px rgba(50, 50, 50, .5)` Box shadow style on hover and focus
-
-##### Example
 ```css
-/* navy background that shifts to blue on hover, in white text, rounded by 3px with a black box shadow that expands spread on hover  */
-@mixin button-solid navy, blue, #fff, 3px, 0 0 5px black;
+--button-color: #333;
+--button-hover-color: #555;
+--button-text-color: #fff;
+--button-radius: 4px;
+--button-shadow: none;
+--button-transition: background-color .3s ease-in-out;
+--button-will-change: background-color;
+
+/* State Opacity  */
+--button-hover-opacity: 1;
+--button-disabled-opacity: .35;
 ```
 
-### button-hollow
-Paints your button as a outlined object with color, shadow and radius.
+#### %button-hollow
+Same as it’s solid counterpart, but it is drawn with a border instead.
 
-##### Options
+##### Variables
 
-* `$color-passive: #555` Border and text color by default
-* `$color-hover: #fff` Border and text color on hover or focus
-* `$color-background: transparent` Optional background-color, made transparent by default
-* `$radius-size: 4px` Size of the border radius by default
-* `$border-width: 1px` Width of the border by default
-* `$shadow: none` Box shadow style on hover and focus
-
-##### Example
 ```css
-/* navy text and border that shifts to blue on hover, with a transparent background, rounded by 3px and no shadow */
-@mixin button-hollow navy, blue, transparent, 3px, 1px, none;
+--button-color: transparent;
+--button-hover-color: #555;
+--button-text-color: #555;
+--button-hover-text-color: #fff;
+--button-radius: 4px;
+--button-shadow: none;
+--button-border: 1px solid #555;
+--button-transition: background .3s ease-in-out, color .3s ease-in-out;
+
+/* State Opacity  */
+--button-hover-opacity: 1;
+--button-disabled-opacity: .35;
 ```
 
-### button-circle-solid
+#### %button-circle-solid
 Paints your button as a solid object with colors, shadow and rounded radius.
 
-##### Options
+##### Variables
 
-* `$color-passive: #333` Background color by default
-* `$color-hover: #555` Backgound color on hover or focus
-* `$color-text: #fff` Color of the inner text by default
-* `$padding: 15px` Spacing inside the button
-* `$shadow: none` Box shadow style on hover and focus
-
-##### Example
 ```css
-/* navy background that shifts to blue on hover, in white text, spaced out at 15px with a black box shadow that expands spread on hover  */
-@mixin button-solid navy, blue, #fff, 15px, 0 0 5px black;
+--button-radius: 50%;
+--button-padding: 15px;
 ```
 
-### button-circle-hollow
+#### %button-circle-hollow
 Paints your button as a outlined object with color, shadow and rounded radius.
 
-##### Options
+##### Variables
 
-* `$color-passive: #555` Border and text color by default
-* `$color-hover: #fff` Border and text color on hover or focus
-* `$color-background: transparent` Optional background-color, made transparent by default
-* `$padding: 15px` Spacing inside the button
-* `$border-width: 1px` Width of the border by default
-* `$shadow: none` Box shadow style on hover and focus
-
-##### Example
 ```css
-/* navy text and border that shifts to blue on hover, with a transparent background, with 3px space inside, 1px border size and no shadow */
-@mixin button-hollow navy, blue, transparent, 3px, 1px, none;
+--button-radius: 50%;
+--button-padding: 15px;
 ```
+
