@@ -1,49 +1,48 @@
+
 /* Button */
 
-%button-inline {
+%button-base {
   appearance: none;
   background-color: initial;
   border-width: 0;
-  cursor: pointer;
-  display: inline-block;
-  padding: 13px 18px;
-  position: relative;
-  line-height: 1;
-  margin: 0 3% 3% 0;
-  max-width: 100%;
-  min-width: 44px;
-  outline: 0;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  z-index: 10;
+  cursor: var(--button-cursor, pointer);
+  line-height: var(--button-line-height, 1);
+  margin: var(--button-margin, 0 2% 2% 0);
+  max-width: var(--button-max-width, 100%);
+  min-width: var(--button-min-width, 44px);
+  outline: var(--button-outline, 0);
+  padding: var(--button-padding, 13px 18px);
+  position: var(--button-position, relative);
+  text-align: var(--button-text-align, center);
+  text-decoration: var(--button-text-decoration, none);
+  user-select: var(--button-user-select, none);
+  vertical-align: var(--button-vertical-align, middle);
+  white-space: var(--button-white-space, nowrap);
+  z-index: var(--button-z-index, 11);
+}
+
+%button-inline {
+  @extend %button-base;
+  display: var(--button-display, inline-block);
 }
 
 %button-block {
-  @extend %button-inline;
-  display: block;
-  width: 100%;
+  @extend %button-base;
+  display: var(--button-display, block);
+  width: var(--button-width, 100%);
 }
 
-@define-mixin button-solid
-$color-passive: #333, 
-$color-hover: #555, 
-$color-text: #fff,
-$radius-size: 4px,
-$shadow: none {
-
-  background-color: $color-passive;
-  border-radius: $radius-size;
-  color: $color-text;
-  transition: background-color .3s ease-in-out;
-  @mixin-content;
+%button-solid {
+  background-color: var(--button-color, #333);
+  border-radius: var(--button-radius, 4px);
+  color: var(--button-text-color, #fff);
+  transition: var(--button-transition, background-color .3s ease-in-out);
+  will-change: var(--button-will-change, background-color);
 
   &::after {
-    border-radius: $radius-size;
-    box-shadow: $shadow;
+    border-radius: var(--button-radius, 4px);
     bottom: 0;
+    box-shadow: var(--button-shadow, none);
     content: '';
     left: 0;
     opacity: 0;
@@ -54,39 +53,30 @@ $shadow: none {
     z-index: 5;
   }
 
-  &:hover::after { opacity: 1; }
+  &:hover::after { opacity: var(--button-hover-opacity, 1); }
 
   &:hover,
-  &:focus { background-color: $color-hover; }
+  &:focus { background-color: var(--button-hover-color, #555); }
 
   &[disabled] {
-    opacity: .35;
+    opacity: var(--button-disabled-opacity, .35);
     pointer-events: none;
   }
 
 }
 
-@define-mixin button-hollow
-$color-passive: #555, 
-$color-hover: #fff, 
-$color-background: transparent,
-$radius-size: 4px,
-$border-width: 1px,
-$shadow: none {
-
-  background-color: $color-background;
-  border-color: $color-passive;
-  border-radius: $radius-size;
-  border-style: solid;
-  border-width: 1px;
-  color: $color-passive;
-  transition: background .4s ease-in-out, color .3s ease-in-out;
-  @mixin-content;
+%button-hollow {
+  background-color: var(--button-color, transparent);
+  border: var(--button-border, 1px solid #555);
+  border-radius: var(--button-radius, 4px);
+  color: var(--button-text-color, #555);
+  transition: var(--button-transition, background .3s ease-in-out, color .3s ease-in-out);
+  will-change: var(--button-will-change, background-color, color);
 
   &::after {
-    border-radius: $radius-size;
+    border-radius: var(--button-radius, 4px);
     bottom: 0;
-    box-shadow: $shadow;
+    box-shadow: var(--button-shadow, none);
     content: '';
     left: 0;
     opacity: 0;
@@ -96,79 +86,58 @@ $shadow: none {
     transition: opacity .3s ease-in-out;
   }
 
-  &:hover::after { opacity: 1; }
+  &:hover::after { opacity: var(--button-hover-opacity, 1); }
 
   &:hover,
-  &:focus { 
-    background-color: $color-passive;
-    color: $color-hover;
+  &:focus {
+    background-color: var(--button-hover-color, #555);
+    color: var(--button-hover-text-color, #fff);
   }
 
   &[disabled] {
-    opacity: .35;
+    opacity: var(--button-disabled-opacity, .35);
     pointer-events: none;
   }
 }
 
-@define-mixin button-circle-solid
-$color-passive: #333, 
-$color-hover: #555, 
-$color-text: #fff,
-$padding: 15px,
-$shadow: none {
-  @mixin button-solid $color-passive, $color-hover, $color-text, 50%, $shadow {
-    padding: $padding;
-  }
+%button-circle-solid {
+  @extend %button-solid;
+  --button-radius: 50%;
+  --button-padding: 15px;
 }
 
-@define-mixin button-circle-hollow
-$color-passive: #555, 
-$color-hover: #fff, 
-$color-background: transparent,
-$padding: 15px,
-$border-width: 1px,
-$shadow: none {
-  @mixin button-hollow $color-passive, $color-hover, $color-background, 50%, $border-width, $shadow {
-    padding: $padding;
-  }
+%button-circle-hollow {
+  @extend %button-hollow;
+  --button-radius: 50%;
+  -button-padding: 15px;
 }
 
 /* Button Group */
 
 %button-group-inline {
-  box-sizing: border-box;
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-bottom: 3%;
+  box-sizing: var(--button-group-box, border-box);
+  display: var(--button-group-display, flex);
+  flex: var(--button-group-flex, 0 1 auto);
+  flex-flow: var(--button-group-flex-flow, row wrap);
+  margin: var(--button-group-margin, 0 0 3%);
 
-  & button {
-    margin-right: 1px;
-    margin-bottom: 1px;
-  }
+  & button { --button-margin: 0 1px 2px 0; }
 }
 
 %button-group-block {
   @extend %button-group-inline;
 
-  & button {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  }
+  & button { flex: var(--button-flex, 1 0); }
 }
 
-@define-mixin button-group-pill {
+%button-group-pill {
   & button {
     &:first-child {
       border-bottom-right-radius: 0 !important;
       border-top-right-radius: 0 !important;
     }
 
-    &:not(:first-child):not(:last-child) {
-      border-radius: 0 !important;
-    }
+    &:not(:first-child):not(:last-child) { --button-radius: 0; }
 
     &:last-child {
       border-bottom-left-radius: 0 !important;
