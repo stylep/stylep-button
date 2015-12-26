@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var autoprefixer = require('autoprefixer');
 var postcss = require('gulp-postcss');
 var simplevars = require('postcss-simple-vars');
@@ -6,20 +7,46 @@ var cssimport = require('postcss-import');
 var nested = require('postcss-nested');
 var mixins = require('postcss-mixins');
 var extend = require('postcss-extend');
+var stylelint = require('stylelint');
+var reporter = require('postcss-reporter');
+
+var stylelintConfig = {
+  "extends": "stylelint-config-suitcss",
+  "rules": {
+    "at-rule-empty-line-before": null,
+    "block-opening-brace-newline-after": null,
+    "comment-empty-line-before": null,
+    "number-leading-zero": null,
+    "string-quotes": "single",
+    "selector-list-comma-newline-after": "always-multi-line",
+    "selector-combinator-space-before": null
+  }
+}
+ 
+
+gulp.task('css:lint', function() {
+        return gulp.src('example/index.css')
+        .pipe(postcss([
+                stylelint(stylelintConfig),
+                reporter({
+                        clearMessages: true,
+                }),
+        ]));
+});
 
 // Compile css into /example
-gulp.task('css', function() {
+gulp.task('css', ['css:lint'], function() {
         var processors = [
                 cssimport,
-                autoprefixer(['last 2 versions']),
                 mixins,
                 simplevars,
+                extend,
                 nested,
-                extend
+                autoprefixer(['last 2 versions'])
         ];
         return gulp.src('example/index.css')
-                .pipe(postcss(processors))
-                .pipe(gulp.dest('example/build'));
+        .pipe(postcss(processors).on('error', gutil.log))
+        .pipe(gulp.dest('example/build'));
 });
 
 gulp.task('watch', function() {
