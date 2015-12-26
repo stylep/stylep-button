@@ -1,55 +1,43 @@
 /* @import stylep-button; */
-@import '../index.css';
+
+@import "../index.css";
 
 body {
-  background-color: #E8EBEF;
-  color: #6B6B77;
-  font-family: 'Helvetica Neue';
+  background-color: #e8ebef;
+  color: #6b6b77;
+  font-family: "Helvetica Neue";
   overflow-x: hidden;
 }
 
 section {
   background-color: #fff;
-  padding: 1em 1em .125em;
   margin-bottom: 1em;
+  padding: 1em 1em 0.125em;
 }
 
-h1 { font-weight: 100; letter-spacing: 1px; }
+h1 {
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
 h2 { font-weight: 200; }
 h3 { font-weight: 300; }
 
-.button--inline {
-  @extend %button-inline;
-}
+.button--inline { @extend %button-inline; }
 
-.button--block {
-  @extend %button-block;
-}
+.button--block { @extend %button-block; }
 
-.button--solid {
-  @mixin button-solid;
-}
+.button--solid { @extend %button-solid; }
 
-.button--hollow {
-  @mixin button-hollow;
-}
+.button--hollow { @extend %button-hollow; } 
 
-.button-circle--solid {
-  @mixin button-circle-solid;
-}
+.button-circle--solid { @extend %button-circle-solid; }
 
-.button-circle--hollow {
-  @mixin button-circle-hollow;
-}
+.button-circle--hollow { @extend %button-circle-hollow; }
 
-.button-group--inline {
-  @extend %button-group-inline;
-}
+.button-group--inline { @extend %button-group-inline; }
 
-.button-group--block {
-  @extend %button-group-block;
-}
+.button-group--block { @extend %button-group-block; }
 
-.button-group--pill {
-  @mixin button-group-pill;
-}
+.button-group--pill { @extend %button-group-pill; }
+
