@@ -150,3 +150,6 @@ Paints your button as a outlined object with color, shadow and rounded radius.
 --button-padding: 15px;
 ```
 
+## License
+This project is licensed under the MIT [license](LICENSE).
+
