@@ -82,11 +82,44 @@ This draws a button that expands the width of the containing element.
 #### `%button-group-inline`
 This draws containing buttons inline on the page.
 
+##### Variables
+
+```css
+--button-group-box: border-box;
+--button-group-display: flex;
+--button-group-flex: 0 1 auto;
+--button-group-flex-flow: row wrap;
+--button-group-margin: 0 0 3%;
+
+/* Inner Buttons */
+--button-margin: 0 1px 2px 0;
+```
+
 #### `%button-group-block`
 This draws containing buttons expanded to the width of the containing element.
 
+##### Variables
+
+```css
+--button-group-box: border-box;
+--button-group-display: flex;
+--button-group-flex: 0 1 auto;
+--button-group-flex-flow: row wrap;
+--button-group-margin: 0 0 3%;
+
+/* Inner Buttons */
+--button-flex: 1 0;
+```
+
 #### `%button-group-pill`
 Combined with another group pattern, you can round off only the first and last button.
+
+##### Variables
+
+```css
+/* Inner Buttons not first or last */
+--button-radius: 0;
+```
 
 ## Styles
 Customizable presets that give your button a specific style-set.
