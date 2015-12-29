@@ -20,168 +20,78 @@ spm install button
 .button {
 
   /* Button Design Pattern */
-  @extend %button-inline;
+  @mixin button-inline;
 
   /* Customize your button */
-  @extend %button-solid;
-  --button-color: green;
-  --button-text-color: white;
+  @mixin button-solid green, #000, #fff;
 }
 ```
 
 ## Patterns
 Placeholder selectors that contain common styles for structure and basic behavior of your buttons.
 
-#### `%button-inline`
+#### `button-inline`
 This draws a button that displays inline on the page.
 
-##### Variables
+##### Options
 
-```css
---button-cursor: pointer;
---button-display: inline-block;
---button-line-height: 1;
---button-margin: 0 2% 2% 0;
---button-max-width: 100%;
---button-min-width: 44px;
---button-outline: 0;
---button-padding: 13px 18px;
---button-position: relative;
---button-text-align: center;
---button-text-decoration: none;
---button-user-select: none;
---button-vertical-align: middle;
---button-white-space: nowrap;
---button-z-index: 11;
-```
+* `$button-padding: 15px` Space inside the button
+* `$button-margin: 0 2% 2% 0` Space around the button
 
-#### `%button-block`
+#### `button-block`
 This draws a button that expands the width of the containing element.
 
-##### Variables
+##### Options
 
-```css
---button-cursor: pointer;
---button-display: block;
---button-line-height: 1;
---button-margin: 0 2% 2% 0;
---button-max-width: 100%;
---button-min-width: 44px;
---button-outline: 0;
---button-padding: 13px 18px;
---button-position: relative;
---button-text-align: center;
---button-text-decoration: none;
---button-user-select: none;
---button-vertical-align: middle;
---button-white-space: nowrap;
---button-z-index: 11;
---button-width: 100%;
-```
+* `$button-padding: 15px` Space inside the button
+* `$button-margin: 0 2% 2% 0` Space around the button
 
-#### `%button-group-inline`
+#### `button-group-inline`
 This draws containing buttons inline on the page.
 
-##### Variables
+##### Options
 
-```css
---button-group-box: border-box;
---button-group-display: flex;
---button-group-flex: 0 1 auto;
---button-group-flex-flow: row wrap;
---button-group-margin: 0 0 3%;
+* `$button-group-padding: 0` Space inside the group
+* `$button-group-margin: 0 0 2%` Space around the group
 
-/* Inner Buttons */
---button-margin: 0 1px 2px 0;
-```
-
-#### `%button-group-block`
+#### `button-group-block`
 This draws containing buttons expanded to the width of the containing element.
 
-##### Variables
+##### Options
 
-```css
---button-group-box: border-box;
---button-group-display: flex;
---button-group-flex: 0 1 auto;
---button-group-flex-flow: row wrap;
---button-group-margin: 0 0 3%;
-
-/* Inner Buttons */
---button-flex: 1 0;
-```
-
-#### `%button-group-pill`
-Combined with another group pattern, you can round off only the first and last button.
-
-##### Variables
-
-```css
-/* Inner Buttons not first or last */
---button-radius: 0;
-```
+* `$button-group-padding: 0` Space inside the group
+* `$button-group-margin: 0 0 2%` Space around the group
 
 ## Styles
 Customizable presets that give your button a specific style-set.
 
-#### `%button-solid`
+#### `button-solid`
 Paints your button as a solid object with colors and radius. For added performance the hover state uses the `::after` pseudo-class to render a shadow with only an `opacity` transition.
 
-##### Variables
+##### Options
 
-```css
---button-color: #333;
---button-hover-color: #555;
---button-text-color: #fff;
---button-radius: 4px;
---button-shadow: none;
---button-transition: background-color .3s ease-in-out;
---button-will-change: background-color;
+* `$button-color: #333`
+* `$button-hover-color: #555`
+* `$button-text-color: #fff`
+* `$button-hover-shadow: none`
+* `$button-radius: 4px`
+* `$button-duration: .3s`
+* `$button-disabled-opacity: .35`
 
-/* State Opacity  */
---button-hover-opacity: 1;
---button-disabled-opacity: .35;
-```
-
-#### %button-hollow
+#### button-hollow
 Same as it’s solid counterpart, but it is drawn with a border instead.
 
-##### Variables
+##### Options
 
-```css
---button-color: transparent;
---button-hover-color: #555;
---button-text-color: #555;
---button-hover-text-color: #fff;
---button-radius: 4px;
---button-shadow: none;
---button-border: 1px solid #555;
---button-transition: background .3s ease-in-out, color .3s ease-in-out;
+* `$button-color: #555`
+* `$button-hover-text-color: #fff`
+* `$button-hover-shadow: none`
+* `$button-radius: 4px`
+* `$button-duration: .3s`
+* `$button-disabled-opacity: .35`
 
-/* State Opacity  */
---button-hover-opacity: 1;
---button-disabled-opacity: .35;
-```
-
-#### %button-circle-solid
-Paints your button as a solid object with colors, shadow and rounded radius.
-
-##### Variables
-
-```css
---button-radius: 50%;
---button-padding: 15px;
-```
-
-#### %button-circle-hollow
-Paints your button as a outlined object with color, shadow and rounded radius.
-
-##### Variables
-
-```css
---button-radius: 50%;
---button-padding: 15px;
-```
+#### `button-group-pill`
+Combined with another group pattern, you can round off only the first and last button.
 
 ## License
 This project is licensed under the MIT [license](LICENSE).
