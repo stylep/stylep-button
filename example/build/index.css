@@ -1,160 +1,8 @@
 /* @import stylep-button; */
 
-/* Button */
+/* Button Patterns */
 
-.button--inline, .button--block {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: initial;
-  border-width: 0;
-  cursor: var(--button-cursor, pointer);
-  line-height: var(--button-line-height, 1);
-  margin: var(--button-margin, 0 2% 2% 0);
-  max-width: var(--button-max-width, 100%);
-  min-width: var(--button-min-width, 44px);
-  outline: var(--button-outline, 0);
-  padding: var(--button-padding, 13px 18px);
-  position: var(--button-position, relative);
-  text-align: var(--button-text-align, center);
-  text-decoration: var(--button-text-decoration, none);
-  -webkit-user-select: var(--button-user-select, none);
-     -moz-user-select: var(--button-user-select, none);
-      -ms-user-select: var(--button-user-select, none);
-          user-select: var(--button-user-select, none);
-  vertical-align: var(--button-vertical-align, middle);
-  white-space: var(--button-white-space, nowrap);
-  z-index: var(--button-z-index, 11);
-}
-
-.button--inline {
-  display: var(--button-display, inline-block);
-}
-
-.button--block {
-  display: var(--button-display, block);
-  width: var(--button-width, 100%);
-}
-
-.button--solid, .button-circle--solid {
-  background-color: var(--button-color, #333);
-  border-radius: var(--button-radius, 4px);
-  color: var(--button-text-color, #fff);
-  transition: var(--button-transition, background-color .3s ease-in-out);
-  will-change: var(--button-will-change, background-color);
-
-}
-
-.button--solid::after, .button-circle--solid::after {
-  border-radius: var(--button-radius, 4px);
-  bottom: 0;
-  box-shadow: var(--button-shadow, none);
-  content: '';
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: opacity .3s ease-in-out;
-  z-index: 5;
-}
-
-.button--solid:hover::after, .button-circle--solid:hover::after {
-  opacity: var(--button-hover-opacity, 1);
-}
-
-.button--solid:hover, .button--solid:focus, .button-circle--solid:hover, .button-circle--solid:focus {
-  background-color: var(--button-hover-color, #555);
-}
-
-.button--solid[disabled], .button-circle--solid[disabled] {
-  opacity: var(--button-disabled-opacity, .35);
-  pointer-events: none;
-}
-
-.button--hollow, .button-circle--hollow {
-  background-color: var(--button-color, transparent);
-  border: var(--button-border, 1px solid #555);
-  border-radius: var(--button-radius, 4px);
-  color: var(--button-text-color, #555);
-  transition: var(--button-transition, background .3s ease-in-out, color .3s ease-in-out);
-  will-change: var(--button-will-change, background-color, color);
-}
-
-.button--hollow::after, .button-circle--hollow::after {
-  border-radius: var(--button-radius, 4px);
-  bottom: 0;
-  box-shadow: var(--button-shadow, none);
-  content: '';
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: opacity .3s ease-in-out;
-}
-
-.button--hollow:hover::after, .button-circle--hollow:hover::after {
-  opacity: var(--button-hover-opacity, 1);
-}
-
-.button--hollow:hover, .button--hollow:focus, .button-circle--hollow:hover, .button-circle--hollow:focus {
-  background-color: var(--button-hover-color, #555);
-  color: var(--button-hover-text-color, #fff);
-}
-
-.button--hollow[disabled], .button-circle--hollow[disabled] {
-  opacity: var(--button-disabled-opacity, .35);
-  pointer-events: none;
-}
-
-.button-circle--solid {
-  --button-radius: 50%;
-  --button-padding: 15px;
-}
-
-.button-circle--hollow {
-  --button-radius: 50%;
-  -button-padding: 15px;
-}
-
-/* Button Group */
-
-.button-group--inline, .button-group--block {
-  box-sizing: var(--button-group-box, border-box);
-  display: var(--button-group-display, flex);
-  -webkit-flex: var(--button-group-flex, 0 1 auto);
-      -ms-flex: var(--button-group-flex, 0 1 auto);
-          flex: var(--button-group-flex, 0 1 auto);
-  -webkit-flex-flow: var(--button-group-flex-flow, row wrap);
-      -ms-flex-flow: var(--button-group-flex-flow, row wrap);
-          flex-flow: var(--button-group-flex-flow, row wrap);
-  margin: var(--button-group-margin, 0 0 3%);
-}
-
-.button-group--inline button, .button-group--block button {
-  --button-margin: 0 1px 2px 0;
-}
-
-.button-group--block button {
-  -webkit-flex: var(--button-flex, 1 0);
-      -ms-flex: var(--button-flex, 1 0);
-          flex: var(--button-flex, 1 0);
-}
-
-.button-group--pill button:first-child {
-  border-bottom-right-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-}
-
-.button-group--pill button:not(:first-child):not(:last-child) {
-  --button-radius: 0;
-}
-
-.button-group--pill button:last-child {
-  border-bottom-left-radius: 0 !important;
-  border-top-left-radius: 0 !important;
-}
+/* Button Styles */
 
 body {
   background-color: #e8ebef;
@@ -176,4 +24,217 @@ h1 {
 
 h2 { font-weight: 200; }
 h3 { font-weight: 300; }
+
+.button--inline { -webkit-appearance: none; -moz-appearance: none; appearance: none; background-color: initial; border-width: 0; cursor: pointer; display: inline-block; line-height: 1; max-width: 100%; min-width: 44px; outline: 0; position: relative; text-align: center; text-decoration: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; white-space: nowrap; z-index: 11; margin: 0 2% 2% 0; padding: 15px; }
+.button--inline-fancy { -webkit-appearance: none; -moz-appearance: none; appearance: none; background-color: initial; border-width: 0; cursor: pointer; display: inline-block; line-height: 1; max-width: 100%; min-width: 44px; outline: 0; position: relative; text-align: center; text-decoration: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; white-space: nowrap; z-index: 11; margin: 0 20px 10px 0; padding: 13px 18px; }
+.button--block { -webkit-appearance: none; -moz-appearance: none; appearance: none; background-color: initial; border-width: 0; cursor: pointer; display: block; line-height: 1; max-width: 100%; min-width: 44px; outline: 0; position: relative; text-align: center; text-decoration: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; white-space: nowrap; z-index: 11; margin: 0 2% 2% 0; padding: 15px; width: 100%; }
+.button--block-fancy { -webkit-appearance: none; -moz-appearance: none; appearance: none; background-color: initial; border-width: 0; cursor: pointer; display: block; line-height: 1; max-width: 100%; min-width: 44px; outline: 0; position: relative; text-align: center; text-decoration: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; white-space: nowrap; z-index: 11; margin: 0 0 10px 0; padding: 13px 18px; width: 100%; }
+.button--solid { background-color: #333; border-radius: 4px; color: #fff; transition: background .3s ease-in-out, color .3s ease-in-out; }
+.button--solid::after {
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+.button--solid:hover::after {
+  opacity: 1;
+}
+.button--solid[disabled] {
+  pointer-events: none;
+}
+.button--solid::after {
+  border-radius: 4px;
+  box-shadow: none;
+  transition: opacity .3s ease-in-out;
+}
+.button--solid:hover,
+  .button--solid:focus {
+  background-color: #555;
+}
+.button--solid[disabled] {
+  opacity: .35;
+}
+.button--solid-fancy { background-color: #00558b; border-radius: 5px; color: #fff; transition: background .1s ease-in-out, color .1s ease-in-out; }
+.button--solid-fancy::after {
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+.button--solid-fancy:hover::after {
+  opacity: 1;
+}
+.button--solid-fancy[disabled] {
+  pointer-events: none;
+}
+.button--solid-fancy::after {
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+  transition: opacity .1s ease-in-out;
+}
+.button--solid-fancy:hover,
+  .button--solid-fancy:focus {
+  background-color: #004876;
+}
+.button--solid-fancy[disabled] {
+  opacity: .4;
+}
+.button--hollow { background-color: transparent; border: 1px solid #555; border-radius: 4px; color: #555; transition: background .3s ease-in-out, color .3s ease-in-out; }
+.button--hollow::after {
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+.button--hollow:hover::after {
+  opacity: 1;
+}
+.button--hollow[disabled] {
+  pointer-events: none;
+}
+.button--hollow::after {
+  border-radius: 4px;
+  box-shadow: none;
+  transition: opacity .3s ease-in-out;
+}
+.button--hollow:hover,
+  .button--hollow:focus {
+  background-color: #555;
+  color: #fff;
+}
+.button--hollow[disabled] {
+  opacity: .35;
+} 
+.button--hollow-fancy { background-color: transparent; border: 1px solid #00558b; border-radius: 5px; color: #00558b; transition: background .1s ease-in-out, color .1s ease-in-out; } 
+.button--hollow-fancy::after {
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+} 
+.button--hollow-fancy:hover::after {
+  opacity: 1;
+} 
+.button--hollow-fancy[disabled] {
+  pointer-events: none;
+} 
+.button--hollow-fancy::after {
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+  transition: opacity .1s ease-in-out;
+} 
+.button--hollow-fancy:hover,
+  .button--hollow-fancy:focus {
+  background-color: #00558b;
+  color: #fff;
+} 
+.button--hollow-fancy[disabled] {
+  opacity: .4;
+}
+.button-group--inline { box-sizing: border-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; -webkit-flex-flow: row wrap; -ms-flex-flow: row wrap; flex-flow: row wrap; margin: 0 0 2%; padding: 0; }
+.button-group--inline button {
+  margin: 0 1px 2px 0 !important;
+}
+.button-group--block { box-sizing: border-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; -webkit-flex-flow: row wrap; -ms-flex-flow: row wrap; flex-flow: row wrap; margin: 0 0 2%; padding: 0; }
+.button-group--block button {
+  margin: 0 1px 2px 0 !important;
+}
+.button-group--block button {
+  -webkit-flex: 1 0 !important;
+      -ms-flex: 1 0 !important;
+          flex: 1 0 !important;
+}
+.button-group--pill button:first-child {
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+.button-group--pill button:not(:first-child):not(:last-child) {
+  border-radius: 0 !important;
+}
+.button-group--pill button:last-child {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+.button-circle--solid { background-color: #333; border-radius: 50%; color: #fff; transition: background .3s ease-in-out, color .3s ease-in-out; }
+
+.button-circle--solid::after {
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+
+.button-circle--solid:hover::after {
+  opacity: 1;
+}
+
+.button-circle--solid[disabled] {
+  pointer-events: none;
+}
+
+.button-circle--solid::after {
+  border-radius: 50%;
+  box-shadow: none;
+  transition: opacity .3s ease-in-out;
+}
+
+.button-circle--solid:hover,
+  .button-circle--solid:focus {
+  background-color: #555;
+}
+
+.button-circle--solid[disabled] {
+  opacity: .35;
+}
+.button-circle--hollow { background-color: transparent; border: 1px solid #333; border-radius: 50%; color: #333; transition: background .3s ease-in-out, color .3s ease-in-out; }
+.button-circle--hollow::after {
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+.button-circle--hollow:hover::after {
+  opacity: 1;
+}
+.button-circle--hollow[disabled] {
+  pointer-events: none;
+}
+.button-circle--hollow::after {
+  border-radius: 50%;
+  box-shadow: none;
+  transition: opacity .3s ease-in-out;
+}
+.button-circle--hollow:hover,
+  .button-circle--hollow:focus {
+  background-color: #333;
+  color: #fff;
+}
+.button-circle--hollow[disabled] {
+  opacity: .35;
+}
 

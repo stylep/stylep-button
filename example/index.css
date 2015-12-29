@@ -23,21 +23,18 @@ h1 {
 h2 { font-weight: 200; }
 h3 { font-weight: 300; }
 
-.button--inline { @extend %button-inline; }
+.button--inline { @mixin button-inline; }
+.button--inline-fancy { @mixin button-inline 13px 18px, 0 20px 10px 0; }
+.button--block { @mixin button-block; }
+.button--block-fancy { @mixin button-block 13px 18px, 0 0 10px 0; }
+.button--solid { @mixin button-solid; }
+.button--solid-fancy { @mixin button-solid #00558b, #004876, #fff, 0 1px 3px rgba(0, 0, 0, .4), 5px, .1s, .4; }
+.button--hollow { @mixin button-hollow; } 
+.button--hollow-fancy { @mixin button-hollow #00558b, #fff, 0 1px 3px rgba(0, 0, 0, .4), 5px, .1s, .4; }
+.button-group--inline { @mixin button-group-inline; }
+.button-group--block { @mixin button-group-block; }
+.button-group--pill { @mixin button-group-pill; }
 
-.button--block { @extend %button-block; }
-
-.button--solid { @extend %button-solid; }
-
-.button--hollow { @extend %button-hollow; } 
-
-.button-circle--solid { @extend %button-circle-solid; }
-
-.button-circle--hollow { @extend %button-circle-hollow; }
-
-.button-group--inline { @extend %button-group-inline; }
-
-.button-group--block { @extend %button-group-block; }
-
-.button-group--pill { @extend %button-group-pill; }
+.button-circle--solid { @mixin button-solid #333, #555, #fff, none, 50%; }
+.button-circle--hollow { @mixin button-hollow #333, #fff, none, 50%; }
 
