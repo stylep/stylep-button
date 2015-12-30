@@ -86,7 +86,7 @@
   $button-text-color: #fff,
   $button-hover-shadow: none,
   $button-radius: 4px,
-  $button-duration: .3s,
+  $button-duration: .1s,
   $button-disabled-opacity: .35 {
   @mixin button-style;
   background-color: $button-color;
@@ -112,7 +112,7 @@
   $button-hover-text-color: #fff,
   $button-hover-shadow: none,
   $button-radius: 4px,
-  $button-duration: .3s,
+  $button-duration: .1s,
   $button-disabled-opacity: .35 {
   @mixin button-style;
   background-color: transparent;
