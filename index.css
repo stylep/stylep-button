@@ -63,6 +63,13 @@
   & button { flex: 1 0 !important; }
 }
 
+@define-mixin button-group-stacked {
+  clear: both;
+  list-style: none;
+  
+  button { width: 100%; }
+}
+
 /* Button Styles */
 @define-mixin button-style {
   &::after {
